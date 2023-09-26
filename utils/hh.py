@@ -1,0 +1,5 @@
+
+
+
+class HeadHunterAPI(VacancyByAPI):
+    pass
