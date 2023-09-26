@@ -1,0 +1,6 @@
+
+
+
+
+class SuperJobAPI(VacancyByAPI):
+    pass
