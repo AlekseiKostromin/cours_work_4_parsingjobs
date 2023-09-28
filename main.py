@@ -1,12 +1,13 @@
-from src.json_keeping import JSONKeeping
+from src.json_saver import JSONSaver
 from src.vacancy import Vacancy
 from src.vacancy_handler import VacancyHandler
+
 from utils import user_interaction
 
 
 def main():
     # Создаём экземпляр класса для работы с JSON
-    json_saver = JSONKeeping('vacancies.json')
+    json_saver = JSONSaver('vacancies.json')
     # Записываем все полученные вакансии в JSON
     user_interaction.get_search_query_json_data(json_saver)
     # Удаляем из JSON вакансии без зарплаты

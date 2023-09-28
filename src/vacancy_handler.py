@@ -1,6 +1,7 @@
 import os.path
 import xlwt
 import csv
+
 from src.vacancy import Vacancy
 from config import USER_FILE_DIR
 
@@ -16,6 +17,7 @@ class VacancyHandler(Vacancy):
         """
         Возвращает только вакансии с зарплатой
         """
+        # Похожий метод есть в классе JSONSaver. На всякий случай решила оставить оба.
         vacancies_with_salary = [vacancy for vacancy in self.vacancies_list
                                  if vacancy.get_avg_salary() != 0]
 

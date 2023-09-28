@@ -18,3 +18,4 @@ class VacancyByAPI(ABC):
     def organize_vacancy_info(vacancy_data: list) -> list:
         """Организует данные о вакансиях в определённом виде"""
         pass
+

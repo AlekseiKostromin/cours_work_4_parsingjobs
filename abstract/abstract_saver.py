@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
 
-class VacancyKeeping(ABC):
+class VacancySaver(ABC):
     @abstractmethod
     def save_vacancies_to_json(self, vacancy_list):
         """
@@ -29,3 +29,4 @@ class VacancyKeeping(ABC):
         Очищает файл с вакансиями
         """
         pass
+

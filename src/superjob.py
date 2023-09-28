@@ -12,8 +12,8 @@ class SuperJobAPI(VacancyByAPI):
     def __init__(self, page=0, per_page=1) -> None:
         """
         Инициализатор экземпляров класса для работы с API
-        :param page: страница поиска (по умолчанию)
-        :param per_page: количество вакансий
+        :param page: страница поиска -- по умолчанию 0 (начальная)
+        :param per_page: количество вакансий -- по умолчанию 50
         """
         self.page = page
         self.per_page = per_page
@@ -86,3 +86,9 @@ class SuperJobAPI(VacancyByAPI):
             organized_vacancy_list.append(vacancy_info)
 
         return organized_vacancy_list
+
+
+# if __name__ == '__main__':
+#     sj = SuperJobAPI()
+#     print(sj.get_vacancies_by_api('python'))
+

@@ -1,10 +1,11 @@
 import os.path
 import json
-from abstract.abstract_keeping import VacancyKeeping
+
+from abstract.abstract_saver import VacancySaver
 from config import JSON_DATA_DIR
 
 
-class JSONKeeping(VacancyKeeping):
+class JSONSaver(VacancySaver):
     """Класс для работы с файлом JSON"""
 
     def __init__(self, filename: str) -> None:
@@ -94,3 +95,4 @@ class JSONKeeping(VacancyKeeping):
             print("Данные успешно удалены из временного файла.")
         except Exception as e:
             print(f"Ошибка при удалении данных из файла: {e}")
+

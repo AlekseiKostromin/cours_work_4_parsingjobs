@@ -1,6 +1,7 @@
-from src.hh import HeadHunterAPI
-from src.sjob import SuperJobAPI
-from config import MAX_VACANCIES
+from src.headhunter import HeadHunterAPI
+from src.superjob import SuperJobAPI
+
+from config import MAX_VACANCIES_PER_PAGE
 
 
 def get_search_query_json_data(json_instance):
@@ -8,14 +9,14 @@ def get_search_query_json_data(json_instance):
     Выполняет поиск по сайтам вакансий и записывает результаты в файл JSON
     """
     search_query = input('Введите базовый запрос для поиска вакансии: ')
-    number_of_vacancies = input(f'Сколько вакансий необходимо получить с каждого сайта (не более {MAX_VACANCIES}): ')
+    number_of_vacancies = input('Сколько вакансий необходимо получить с каждого сайта (не более 100): ')
 
     try:
         number_of_vacancies = int(number_of_vacancies)
-        if number_of_vacancies <= 0 or number_of_vacancies > MAX_VACANCIES:
-            number_of_vacancies = MAX_VACANCIES
+        if number_of_vacancies <= 0 or number_of_vacancies > 100:
+            number_of_vacancies = MAX_VACANCIES_PER_PAGE
     except ValueError:
-        number_of_vacancies = MAX_VACANCIES
+        number_of_vacancies = MAX_VACANCIES_PER_PAGE
 
     # Создаём экземпляры классов для работы с API сайтов с вакансиями
     hh_provider = HeadHunterAPI(per_page=number_of_vacancies)
@@ -92,7 +93,7 @@ def show_top_vacancies_by_salary(handler, vacancies_list: list) -> list:
 def filter_and_save_vacancies(handler, top_vacancies: list) -> None:
     """
     Выводит на экран или сохраняет вакансии по заданным критериям
-    :param "json_instanc: экземпляр класса для работы с JSON
+    :param json_instance: экземпляр класса для работы с JSON
     :param handler: экземпляр класса-обработчика вакансий
     :param top_vacancies: список из вакансий топ N по зарплате
     """

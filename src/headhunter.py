@@ -92,3 +92,8 @@ class HeadHunterAPI(VacancyByAPI):
             organized_vacancy_list.append(vacancy_info)
 
         return organized_vacancy_list
+
+
+# if __name__ == '__main__':
+#     hh = HeadHunterAPI()
+#     print(hh.get_vacancies_by_api('junior python developer'))

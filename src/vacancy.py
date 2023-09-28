@@ -20,7 +20,7 @@ class Vacancy:
         self.salary_to = vacancy_info.get('salary_to')
         self.currency = vacancy_info.get('currency')
         self.experience = vacancy_info.get('experience', 'Не указано')
-        self.requirements = vacancy_info.get('requirements', 'Не указано')
+        self.requirements = vacancy_info.get('requirements',  'Не указано')
 
     def __str__(self) -> str:
         """Строковое представление вакансии"""
@@ -75,3 +75,4 @@ class Vacancy:
     @salary_to.setter
     def salary_to(self, value):
         self._salary_to = value
+
